@@ -16,3 +16,4 @@ git add *
 git commit
 
 echo "committed"
+echo "input 'git push'"
