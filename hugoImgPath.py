@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 
-path = "blogpath/public"
+path = "../myblog/public"
 
 imgpathdct = dict()
 
