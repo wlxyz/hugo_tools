@@ -8,9 +8,9 @@ echo "fix image path by hugoImgPath.py"
 python3 hugoImgPath.py
 
 echo "copy from myblog/public/ to wlxyz.github.io/"
-cp -r myblog/public/* wlxyz.github.io/
+cp -r ../myblog/public/* ../wlxyz.github.io/
 
-cd wlxyz.github.io/
+cd ../wlxyz.github.io/
 echo "add and commit"
 git add *
 git commit

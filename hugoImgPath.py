@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 path = "../myblog/public"
-
+pre_address = "https://raw.githubusercontent.com/wlxyz/wlxyz.github.io/master/"
 imgpathdct = dict()
 
 #search images
@@ -25,10 +25,11 @@ for dirpath, dirnames, filenames in os.walk(path):
             soup = BeautifulSoup(open(dirpath+'/'+i))
             img_list = soup.find_all("img")
             for im in img_list:
-                #print(im.get('src'))
+                print(im.get('src'))
+                im['src'] = im['src'].rsplit('/', 1)[-1]
                 if im['src'] in imgpathdct:
-                    im['src'] = imgpathdct[im['src']]
-                    print(im['src'])
+                    im['src'] = pre_address + imgpathdct[im['src']]
+                    print('edit' ,im['src'])
             with open(dirpath+'/'+i, 'w') as f:
                 f.write(soup.prettify())
             print(dirpath+'/'+i + " finished")
